@@ -9,9 +9,9 @@
 <link href="SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
 
 <style>
-/* Modernized typography & colors */
+/* Modern typography & pastel yellow theme */
 body {
-    background-color: #fffbe6; /* pastel yellow background */
+    background-color: #fffbe6;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     color: #333;
     margin: 0;
@@ -38,11 +38,19 @@ p {
     margin-bottom: 1em;
 }
 
-#body-content {
-    max-width: 900px;
+/* Container */
+#body-container {
+    display: flex;
+    max-width: 1200px;
     margin: 2em auto;
-    padding: 1em 2em;
+    gap: 2em;
+    padding: 0 2em;
+}
+
+#body-content {
+    flex: 3;
     background-color: #fff;
+    padding: 2em;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
@@ -77,20 +85,20 @@ input[type="submit"]:hover {
     background-color: #d4a300;
 }
 
-/* Sidebar & best-sellers */
-.sidenote-summary {
-    max-width: 200px;
-    margin: 2em auto;
+/* Sidebar */
+#sidebar {
+    flex: 1;
     text-align: center;
 }
 
-.sidenote-summary img {
+#sidebar img {
     border-radius: 8px;
     width: 100%;
     height: auto;
     margin-bottom: 0.5em;
 }
 
+/* Footer */
 #ud-footer {
     background-color: #fffbe6;
     text-align: center;
@@ -112,6 +120,7 @@ input[type="submit"]:hover {
 <body>
 <div id="ud-main-container">
 
+  <!-- Menu -->
   <div id="menu-container">
     <ul id="MenuBar1" class="MenuBarHorizontal">
       <li><p><a href="index.html">HOME</a></p></li>
@@ -135,52 +144,57 @@ input[type="submit"]:hover {
     </ul>
   </div>
 
-  <div id="body-content">
-    <h1>Book a Table at Kitchen Door</h1>
-    <p>
-      Planning a visit to Kitchen Door? Whether it’s a relaxed coffee, a catch-up with friends,
-      or a special occasion, we’d love to welcome you. Fill in your details below and we’ll confirm your booking as soon as possible.
-      If you have any special requests or questions, feel free to include them in the message — we’re always happy to help.
-    </p>
+  <!-- Main content + sidebar -->
+  <div id="body-container">
+    <div id="body-content">
+      <h1>Book a Table at Kitchen Door</h1>
+      <p>
+        Planning a visit to Kitchen Door? Whether it’s a relaxed coffee, a catch-up with friends,
+        or a special occasion, we’d love to welcome you. Fill in your details below and we’ll confirm your booking as soon as possible.
+        If you have any special requests or questions, feel free to include them in the message — we’re always happy to help.
+      </p>
 
-    <form id="booking-form" method="post" action="">
-      <h2>Personal Information</h2>
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name" />
+      <form id="booking-form" method="post" action="">
+        <h2>Personal Information</h2>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" />
 
-      <label for="email">Email:</label>
-      <input type="email" name="email" id="email" />
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" />
 
-      <label for="phone">Phone:</label>
-      <input type="text" name="phone" id="phone" />
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone" id="phone" />
 
-      <h2>Booking Details</h2>
-      <label for="details">Date, Time & Special Requests:</label>
-      <textarea name="details" id="details" rows="5"></textarea>
+        <h2>Booking Details</h2>
+        <label for="details">Date, Time & Special Requests:</label>
+        <textarea name="details" id="details" rows="5"></textarea>
 
-      <input type="submit" value="Submit Booking" />
-    </form>
+        <input type="submit" value="Submit Booking" />
+      </form>
 
-    <h2>Contact Details</h2>
-    <p>Phone: 0832-2271100</p>
-    <p>Mobile: +44 7982 300012</p>
-    <p>Email: <a href="mailto:info@kitchendoor.co.uk">info@kitchendoor.co.uk</a></p>
+      <h2>Contact Details</h2>
+      <p>Phone: 0832-2271100</p>
+      <p>Mobile: +44 7982 300012</p>
+      <p>Email: <a href="mailto:info@kitchendoor.co.uk">info@kitchendoor.co.uk</a></p>
+    </div>
+
+    <!-- Sidebar / Best-Sellers -->
+    <div id="sidebar">
+      <p>BEST-SELLER</p>
+      <img src="apple pie.jpg" alt="apple pie">
+      <p>Apple pie with vanilla ice-cream</p>
+
+      <p>CHEF’S PICK</p>
+      <img src="avocado salad.jpg" alt="avocado salad">
+      <p>Avocado salad</p>
+
+      <p>COFFEE OF THE DAY</p>
+      <img src="caffe latte.jpg" alt="caffè latte">
+      <p>Caffè latte</p>
+    </div>
   </div>
 
-  <div class="sidenote-summary">
-    <p>BEST-SELLER</p>
-    <img src="apple pie.jpg" alt="apple pie">
-    <p>Apple pie with vanilla ice-cream</p>
-
-    <p>CHEF’S PICK</p>
-    <img src="avocado salad.jpg" alt="avocado salad">
-    <p>Avocado salad</p>
-
-    <p>COFFEE OF THE DAY</p>
-    <img src="caffe latte.jpg" alt="caffè latte">
-    <p>Caffè latte</p>
-  </div>
-
+  <!-- Footer -->
   <div id="ud-footer">
     website designed by Greta Fernandes *2026*
   </div>
