@@ -5,8 +5,6 @@
 <title>Kitchen Door: Book a Table</title>
 
 <link href="css/food express styles.css" rel="stylesheet" type="text/css" />
-<script src="SpryMenuBar.js"></script>
-<link href="SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
 
 <style>
 /* Modern typography & pastel yellow theme */
@@ -38,7 +36,67 @@ p {
     margin-bottom: 1em;
 }
 
-/* Container */
+/* Menu bar */
+#menu-container {
+    background-color: #fffbe6;
+    text-align: center;
+    padding: 1em 0;
+}
+
+#menu-container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu-container li {
+    display: inline-block;
+    position: relative;
+    margin: 0 1em;
+}
+
+#menu-container a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    padding: 0.5em 0.8em;
+    transition: background 0.3s, color 0.3s;
+    border-radius: 6px;
+}
+
+#menu-container li:hover > a,
+#menu-container li a.active {
+    background-color: #e6b800;
+    color: #fff;
+}
+
+#menu-container li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fffbe6;
+    padding: 0.5em 0;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    min-width: 150px;
+}
+
+#menu-container li:hover ul {
+    display: block;
+}
+
+#menu-container li ul li {
+    display: block;
+    margin: 0;
+}
+
+#menu-container li ul li a {
+    display: block;
+    padding: 0.5em 1em;
+}
+
+/* Layout */
 #body-container {
     display: flex;
     max-width: 1200px;
@@ -55,6 +113,19 @@ p {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+#sidebar {
+    flex: 1;
+    text-align: center;
+}
+
+#sidebar img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.5em;
+}
+
+/* Form styling */
 input[type="text"], input[type="email"], textarea {
     width: 100%;
     padding: 0.6em;
@@ -85,19 +156,6 @@ input[type="submit"]:hover {
     background-color: #d4a300;
 }
 
-/* Sidebar */
-#sidebar {
-    flex: 1;
-    text-align: center;
-}
-
-#sidebar img {
-    border-radius: 8px;
-    width: 100%;
-    height: auto;
-    margin-bottom: 0.5em;
-}
-
 /* Footer */
 #ud-footer {
     background-color: #fffbe6;
@@ -107,28 +165,21 @@ input[type="submit"]:hover {
     font-size: 0.9em;
     color: #666;
 }
-
-/* Menu */
-#menu-container {
-    text-align: center;
-    margin-top: 1em;
-    margin-bottom: 2em;
-}
 </style>
 </head>
 
 <body>
 <div id="ud-main-container">
 
-  <!-- Menu -->
+  <!-- Modern Menu -->
   <div id="menu-container">
-    <ul id="MenuBar1" class="MenuBarHorizontal">
-      <li><p><a href="index.html">HOME</a></p></li>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
       <li>
-        <p><a href="#" class="MenuBarItemSubmenu">OUR MENU</a></p>
+        <a href="#">OUR MENU</a>
         <ul>
           <li>
-            <a href="#" class="MenuBarItemSubmenu">DRINKS</a>
+            <a href="#">DRINKS</a>
             <ul>
               <li><a href="coffee.html">COFFEE</a></li>
               <li><a href="smoothies.html">SMOOTHIES</a></li>
@@ -139,19 +190,20 @@ input[type="submit"]:hover {
           <li><a href="salads.html">SALADS</a></li>
         </ul>
       </li>
-      <li><p><a href="about us.html">ABOUT US</a></p></li>
-      <li><p><a href="contact.html">BOOK A TABLE</a></p></li>
+      <li><a href="about us.html">ABOUT US</a></li>
+      <li><a href="booking.html" class="active">BOOK A TABLE</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
     </ul>
   </div>
 
-  <!-- Main content + sidebar -->
+  <!-- Main content + Sidebar -->
   <div id="body-container">
     <div id="body-content">
       <h1>Book a Table at Kitchen Door</h1>
       <p>
         Planning a visit to Kitchen Door? Whether it’s a relaxed coffee, a catch-up with friends,
         or a special occasion, we’d love to welcome you. Fill in your details below and we’ll confirm your booking as soon as possible.
-        If you have any special requests or questions, feel free to include them in the message — we’re always happy to help.
+        If you have any special requests or questions, feel free to include them in the message.
       </p>
 
       <form id="booking-form" method="post" action="">
@@ -196,16 +248,9 @@ input[type="submit"]:hover {
 
   <!-- Footer -->
   <div id="ud-footer">
-    website designed by Greta Fernandes *2026*
+    Website designed by Greta Fernandes *2026*
   </div>
+
 </div>
-
-<script>
-var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {
-	imgDown:"SpryMenuBarDownHover.gif",
-	imgRight:"SpryMenuBarRightHover.gif"
-});
-</script>
-
 </body>
 </html>
