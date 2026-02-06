@@ -1,202 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Kitchen Door: Book a Table</title>
+  <meta charset="UTF-8">
+  <title>About Us | Kitchen Door</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="css/food express styles.css" rel="stylesheet" type="text/css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-<style>
-/* Modern typography & pastel yellow theme */
-body {
-    background-color: #fffbe6;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-}
+  <style>
+    :root {
+      --yellow-main: #fff4cc;
+      --yellow-accent: #ffe08a;
+      --yellow-soft: #fff9e6;
+      --text-dark: #2f2f2f;
+      --text-muted: #6b6b6b;
+    }
 
-h1 {
-    font-size: 2.5em;
-    color: #e6b800;
-    margin-bottom: 0.5em;
-}
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--yellow-soft);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
 
-h2 {
-    font-size: 1.5em;
-    font-weight: 500;
-    color: #666;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-}
+    header {
+      background-color: var(--yellow-main);
+      border-bottom: 1px solid #f0e2a4;
+      padding: 1.2rem 2rem;
+    }
 
-p {
-    line-height: 1.6em;
-    margin-bottom: 1em;
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+      padding: 0;
+      margin: 0;
+      align-items: center;
+    }
 
-/* Menu bar */
-#menu-container {
-    background-color: #fffbe6;
-    text-align: center;
-    padding: 1em 0;
-}
+    nav a {
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
 
-#menu-container ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+    nav a:hover {
+      color: #a67c00;
+    }
 
-#menu-container li {
-    display: inline-block;
-    position: relative;
-    margin: 0 1em;
-}
+    main {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2.5rem;
+    }
 
-#menu-container a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #333;
-    padding: 0.5em 0.8em;
-    transition: background 0.3s, color 0.3s;
-    border-radius: 6px;
-}
+    h1, h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+    }
 
-#menu-container li:hover > a,
-#menu-container li a.active {
-    background-color: #e6b800;
-    color: #fff;
-}
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+    }
 
-#menu-container li ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fffbe6;
-    padding: 0.5em 0;
-    border-radius: 6px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    min-width: 150px;
-}
+    .about img {
+      width: 100%;
+      border-radius: 14px;
+      margin: 2rem 0;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
 
-#menu-container li:hover ul {
-    display: block;
-}
+    .sidebar {
+      background-color: #ffffff;
+      padding: 1.8rem;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
 
-#menu-container li ul li {
-    display: block;
-    margin: 0;
-}
+    .sidebar h3 {
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+    }
 
-#menu-container li ul li a {
-    display: block;
-    padding: 0.5em 1em;
-}
+    .sidebar img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 0.6rem;
+    }
 
-/* Layout */
-#body-container {
-    display: flex;
-    max-width: 1200px;
-    margin: 2em auto;
-    gap: 2em;
-    padding: 0 2em;
-}
+    .sidebar p {
+      margin-top: 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
 
-#body-content {
-    flex: 3;
-    background-color: #fff;
-    padding: 2em;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+    footer {
+      background-color: var(--yellow-main);
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
 
-#sidebar {
-    flex: 1;
-    text-align: center;
-}
-
-#sidebar img {
-    border-radius: 8px;
-    width: 100%;
-    height: auto;
-    margin-bottom: 0.5em;
-}
-
-/* Form styling */
-input[type="text"], input[type="email"], textarea {
-    width: 100%;
-    padding: 0.6em;
-    margin-top: 0.3em;
-    margin-bottom: 1em;
-    border: 1px solid #e6b800;
-    border-radius: 6px;
-    font-size: 1em;
-    box-sizing: border-box;
-}
-
-textarea {
-    resize: vertical;
-}
-
-input[type="submit"] {
-    background-color: #e6b800;
-    color: #fff;
-    padding: 0.8em 2em;
-    font-size: 1.1em;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-input[type="submit"]:hover {
-    background-color: #d4a300;
-}
-
-/* Footer */
-#ud-footer {
-    background-color: #fffbe6;
-    text-align: center;
-    padding: 1.5em 0;
-    margin-top: 3em;
-    font-size: 0.9em;
-    color: #666;
-}
-</style>
+    @media (max-width: 800px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<div id="ud-main-container">
 
-  <!-- Modern Menu -->
-  <div id="menu-container">
+<header>
+  <nav>
     <ul>
-      <li><a href="index.html">HOME</a></li>
-      <li>
-        <a href="#">OUR MENU</a>
-        <ul>
-          <li>
-            <a href="#">DRINKS</a>
-            <ul>
-              <li><a href="coffee.html">COFFEE</a></li>
-              <li><a href="smoothies.html">SMOOTHIES</a></li>
-            </ul>
-          </li>
-          <li><a href="sweet treats.html">SWEET TREATS</a></li>
-          <li><a href="savoury treats.html">SAVOURY TREATS</a></li>
-          <li><a href="salads.html">SALADS</a></li>
-        </ul>
-      </li>
-      <li><a href="about us.html">ABOUT US</a></li>
-      <li><a href="booking.html" class="active">BOOK A TABLE</a></li>
-      <li><a href="contact.html">CONTACT</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="coffee.html">Coffee</a></li>
+      <li><a href="smoothies.html">Smoothies</a></li>
+      <li><a href="sweet treats.html">Sweet Treats</a></li>
+      <li><a href="savoury treats.html">Savoury Treats</a></li>
+      <li><a href="salads.html">Salads</a></li>
+      <li><a href="about us.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-  </div>
+  </nav>
+</header>
 
-  <!-- Main content + Sidebar -->
+<main>
+ <!-- Main content + Sidebar -->
   <div id="body-container">
     <div id="body-content">
       <h1>Book a Table at Kitchen Door</h1>
@@ -254,3 +194,4 @@ input[type="submit"]:hover {
 </div>
 </body>
 </html>
+
