@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Smoothies | Kitchen Door</title>
+  <title>Iced Drinks | Kitchen Door</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Google Fonts -->
@@ -34,9 +34,10 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1.8rem;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 0;
-      margin: 0;
       align-items: center;
     }
 
@@ -63,15 +64,14 @@
     h1, h2, h3 {
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
-      margin-top: 0;
     }
 
     h1 {
       font-size: 2.4rem;
-      margin-bottom: 1rem;
+      margin-top: 0;
     }
 
-    .smoothie-item {
+    .coffee-item {
       background: #fff;
       padding: 1.5rem;
       border-radius: 18px;
@@ -80,43 +80,18 @@
       gap: 1.5rem;
       margin-bottom: 2rem;
       box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-      align-items: center;
     }
 
-    .smoothie-item img {
+    .coffee-item img {
       width: 150px;
       height: 150px;
       object-fit: cover;
       border-radius: 12px;
     }
 
-    .smoothie-item p {
+    .coffee-item p {
       margin: 0.5rem 0 0;
       color: var(--text-muted);
-    }
-
-    .sidebar {
-      background: #fff;
-      padding: 1.8rem;
-      border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-    }
-
-    .sidebar img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 0.6rem;
-    }
-
-    .sidebar h3 {
-      margin-top: 0;
-      margin-bottom: 0.6rem;
-    }
-
-    .sidebar p {
-      margin-top: 0;
-      color: var(--text-muted);
-      font-size: 0.95rem;
     }
 
     footer {
@@ -128,17 +103,34 @@
       color: var(--text-muted);
     }
 
+    /* Right-hand side image column */
+.image-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.image-column img {
+  width: 100%;
+  height: 400px;  /* uniform height for all images */
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  align-self: start;
+}
+
+
     @media (max-width: 800px) {
       main {
         grid-template-columns: 1fr;
       }
 
-      .smoothie-item {
+      .coffee-item {
         grid-template-columns: 1fr;
         text-align: center;
       }
 
-      .smoothie-item img {
+      .coffee-item img {
         margin: 0 auto;
       }
     }
@@ -151,11 +143,11 @@
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="coffee.html">Coffee</a></li>
-      <li><a href="smoothies.html">Smoothies</a></li>
+      <li><a href="coffee.html">Hot Drinks</a></li>
+      <li><a href="smoothies.html">Iced Drinks</a></li>
       <li><a href="sweet treats.html">Sweet Treats</a></li>
       <li><a href="savoury treats.html">Savoury Treats</a></li>
-      <li><a href="salads.html">Salads</a></li>
+      <li><a href="salads.html">Breakfast & Brunch</a></li>
       <li><a href="about us.html">About Us</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -163,59 +155,77 @@
 </header>
 
 <main>
+  <section class="menu-items">
+    <h1>Iced Drinks</h1>
 
-  <section>
-    <h1>Smoothies</h1>
-
-    <div class="smoothie-item">
-      <img src="berry smoothie.jpg" alt="Strawberry Smoothie">
+    <div class="coffee-item">
+      <img src="green-goddess-smoothie" alt="smoothie">
       <div>
-        <h2>Strawberry Smoothie</h2>
-        <p>A nourishing blend of natural strawberry puree, a whole banana, milk, and ice, topped with fresh berries.</p>
+        <h2>Green Goddess</h2>
+        <p>A refreshing blend of spinach, kale, and banana, topped with a sprinkle of coconut for a naturally vibrant sip.</p>
       </div>
     </div>
 
-    <div class="smoothie-item">
-      <img src="mango smoothie.jpg" alt="Mango Smoothie">
+    <div class="coffee-item">
+      <img src="lemon-iced-tea.webp" alt="Lemon Iced Tea">
       <div>
-        <h2>Mango Smoothie</h2>
-        <p>Sweet and flavourful mango with a blast of carrot, made with nonfat Greek yoghurt for a perfect flavour combo.</p>
+        <h2>Citrus Zing</h2>
+        <p>Bright, zesty lemon meets bold black tea, chilled to perfection for a refreshing, tangy sip.</p>
       </div>
     </div>
 
-    <div class="smoothie-item">
-      <img src="avocado smoothie.jpg" alt="Avocado Smoothie">
+    <div class="coffee-item">
+      <img src="thai-boba-tea.jpg" alt="thai tea">
       <div>
-        <h2>Avocado Smoothie</h2>
-        <p>Thick, creamy, and delicious avocado with a touch of honey, made with nonfat Greek yoghurt.</p>
+        <h2>Oriental Pearls</h2>
+        <p>Iced Thai tea from Thailand, sweetened with condensed milk and served with chewy tapioca pearls for a fun, indulgent sip.</p>
       </div>
     </div>
 
-    <div class="smoothie-item">
-      <img src="banana smoothie.jpg" alt="Banana Smoothie">
+    <div class="coffee-item">
+      <img src="iced-lavender-honey-latte.webp" alt="iced latte">
       <div>
-        <h2>Banana Smoothie</h2>
-        <p>Bananas, milk, peanut butter, and honey blended to give you a filling yet refreshing smoothie.</p>
+        <h2>Death by Lavender</h2>
+        <p>A chillingly delicious iced latte with delicate lavender, a touch of golden honey, and creamy milk — floral, sweet, and utterly irresistible.</p>
+      </div>
+    </div>
+
+    <div class="coffee-item">
+      <img src="whipped-coffee.webp" alt="dalgona">
+      <div>
+        <h2>Whipped Dreams </h2>
+        <p>Fluffy, velvety layers of aerated coffee atop creamy milk and topped with chocolate shavings, delivering a sweet, dreamy sip in every spoonful.</p>
+      </div>
+    </div>
+
+    <div class="coffee-item">
+      <img src="strawberry-milk.jpg" alt="strawberry milk">
+      <div>
+        <h2>Seoul-mate</h2>
+        <p>Creamy fresh milk layered with real, macerated strawberries for a naturally sweet, fruity delight.</p>
+      </div>
+    </div>
+
+    <div class="coffee-item">
+      <img src="rose-milk.webp" alt="Rose Milk">
+      <div>
+        <h2>Velvet Kiss</h2>
+        <p>Creamy milk infused with raspberry and rose, chia seeds for a playful twist, topped with a swirl of cream..</p>
       </div>
     </div>
 
   </section>
 
-  <aside class="sidebar">
-    <h3>Best Seller</h3>
-    <img src="apple pie.jpg" alt="Apple pie">
-    <p>Apple pie with vanilla ice cream</p>
-
-    <h3>Chef’s Pick</h3>
-    <img src="avocado salad.jpg" alt="Avocado salad">
-    <p>Avocado salad</p>
-
-    <h3>Coffee of the Day</h3>
-    <img src="caffe latte.jpg" alt="Caffè latte">
-    <p>Caffè latte</p>
-  </aside>
-
+ <!-- Right-hand side image column -->
+<aside class="image-column">
+  <img src="coffee-beans.jpg" alt="Cafe Image 1">
+  <img src="tea.jpg" alt="Cafe Image 2">
+  <img src="milk.avif" alt="Cafe Image 3">
+  <img src="teaspoons.jpeg" alt="Cafe Image 4">
+</aside>
+  
 </main>
+
 
 <footer>
   <p>Website designed by Greta Fernandes © 2026</p>
@@ -223,3 +233,7 @@
 
 </body>
 </html>
+
+
+
+
