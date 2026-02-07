@@ -34,9 +34,10 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1.8rem;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 0;
-      margin: 0;
       align-items: center;
     }
 
@@ -52,12 +53,9 @@
     }
 
     main {
-      max-width: 1100px;
+      max-width: 900px;
       margin: 3rem auto;
       padding: 0 1.5rem;
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 2.5rem;
     }
 
     h1, h2, h3 {
@@ -79,33 +77,49 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
 
-    .home-intro p {
-      margin-bottom: 1.2rem;
-      color: var(--text-dark);
+    /* Reviews */
+    .reviews {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 18px;
+      margin-top: 3rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      text-align: center;
     }
 
-    .sidebar {
-      background: #fff;
-      padding: 1.8rem;
+    .review {
+      display: none;
+      font-style: italic;
+      color: var(--text-muted);
+    }
+
+    .review.active {
+      display: block;
+    }
+
+    /* Opening Times */
+    .opening-times {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .opening-times p {
+      margin: 0.4rem 0;
+      color: var(--text-muted);
+    }
+
+    /* Map */
+    .map {
+      margin-top: 2.5rem;
       border-radius: 18px;
+      overflow: hidden;
       box-shadow: 0 8px 20px rgba(0,0,0,0.06);
     }
 
-    .sidebar img {
+    iframe {
       width: 100%;
-      border-radius: 12px;
-      margin-bottom: 0.6rem;
-    }
-
-    .sidebar h3 {
-      margin-top: 0;
-      margin-bottom: 0.6rem;
-    }
-
-    .sidebar p {
-      margin-top: 0;
-      color: var(--text-muted);
-      font-size: 0.95rem;
+      height: 300px;
+      border: 0;
     }
 
     footer {
@@ -116,16 +130,6 @@
       font-size: 0.9rem;
       color: var(--text-muted);
     }
-
-    @media (max-width: 800px) {
-      main {
-        grid-template-columns: 1fr;
-      }
-      .home-intro img {
-        margin: 0 auto 1.5rem auto;
-        display: block;
-      }
-    }
   </style>
 </head>
 
@@ -135,8 +139,8 @@
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="coffee.html">Coffee</a></li>
-      <li><a href="smoothies.html">Smoothies</a></li>
+      <li><a href="coffee.html">Hot Drinks</a></li>
+      <li><a href="smoothies.html">Iced Drinks</a></li>
       <li><a href="sweet treats.html">Sweet Treats</a></li>
       <li><a href="savoury treats.html">Savoury Treats</a></li>
       <li><a href="salads.html">Salads</a></li>
@@ -147,34 +151,55 @@
 </header>
 
 <main>
-  <!-- Main Content -->
+
   <section class="home-intro">
     <h1>Welcome to Kitchen Door</h1>
-    <img src="cafe interior.jpg" alt="Kitchen Door Interior">
-    <p>Step inside Kitchen Door, and the rich aroma of freshly brewed coffee and warm pastries welcomes you.</p>
-    <p>Sunlight dances on wooden counters, and every corner invites you to slow down—whether catching up with friends or stealing a quiet moment for yourself.</p>
-    <p>Every cup and every bite is crafted to make your day a little brighter.</p>
+    <img src="cafe-exterior.jpg" alt="Kitchen Door Interior">
+    <p>Step inside Kitchen Door, where mornings linger and conversations flow as easily as the coffee.</p>
+    <p>From the first sip to the last bite, everything here is made to slow time just a little.</p>
   </section>
 
-  <!-- Sidebar / Best Sellers -->
-  <aside class="sidebar">
-    <h3>Best Seller</h3>
-    <img src="apple pie.jpg" alt="Apple pie">
-    <p>Apple pie with vanilla ice cream</p>
+  <!-- Reviews -->
+  <section class="reviews">
+    <h2>What Our Customers Say</h2>
 
-    <h3>Chef’s Pick</h3>
-    <img src="avocado salad.jpg" alt="Avocado salad">
-    <p>Avocado salad</p>
+    <p class="review active">“A hidden gem — warm, welcoming, and the best coffee I’ve had in London.”</p>
+    <p class="review">“Perfect spot to unwind. The atmosphere feels like home.”</p>
+    <p class="review">“Incredible flavours and such friendly staff. I keep coming back.”</p>
+  </section>
 
-    <h3>Coffee of the Day</h3>
-    <img src="caffe latte.jpg" alt="Caffè latte">
-    <p>Caffè latte</p>
-  </aside>
+  <!-- Opening Times -->
+  <section class="opening-times">
+    <h2>Opening Times</h2>
+    <p>Monday – Friday: 8:00am – 6:00pm</p>
+    <p>Saturday: 9:00am – 5:00pm</p>
+    <p>Sunday: 9:00am – 4:00pm</p>
+  </section>
+
+  <!-- Map -->
+  <section class="map">
+    <iframe 
+      src="https://www.google.com/maps?q=London&output=embed"
+      loading="lazy">
+    </iframe>
+  </section>
+
 </main>
 
 <footer>
   <p>Website designed by Greta Fernandes © 2026</p>
 </footer>
+
+<script>
+  const reviews = document.querySelectorAll('.review');
+  let index = 0;
+
+  setInterval(() => {
+    reviews[index].classList.remove('active');
+    index = (index + 1) % reviews.length;
+    reviews[index].classList.add('active');
+  }, 4000);
+</script>
 
 </body>
 </html>
