@@ -34,9 +34,10 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1.8rem;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 0;
-      margin: 0;
       align-items: center;
     }
 
@@ -70,7 +71,7 @@
       margin-top: 0;
     }
 
-    .treat-item {
+    .coffee-item {
       background: #fff;
       padding: 1.5rem;
       border-radius: 18px;
@@ -79,43 +80,18 @@
       gap: 1.5rem;
       margin-bottom: 2rem;
       box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-      align-items: center;
     }
 
-    .treat-item img {
+    .coffee-item img {
       width: 150px;
       height: 150px;
       object-fit: cover;
       border-radius: 12px;
     }
 
-    .treat-item p {
+    .coffee-item p {
       margin: 0.5rem 0 0;
       color: var(--text-muted);
-    }
-
-    .sidebar {
-      background: #fff;
-      padding: 1.8rem;
-      border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-    }
-
-    .sidebar img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 0.6rem;
-    }
-
-    .sidebar h3 {
-      margin-top: 0;
-      margin-bottom: 0.6rem;
-    }
-
-    .sidebar p {
-      margin-top: 0;
-      color: var(--text-muted);
-      font-size: 0.95rem;
     }
 
     footer {
@@ -127,17 +103,34 @@
       color: var(--text-muted);
     }
 
+    /* Right-hand side image column */
+.image-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.image-column img {
+  width: 100%;
+  height: 400px;  /* uniform height for all images */
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  align-self: start;
+}
+
+
     @media (max-width: 800px) {
       main {
         grid-template-columns: 1fr;
       }
 
-      .treat-item {
+      .coffee-item {
         grid-template-columns: 1fr;
         text-align: center;
       }
 
-      .treat-item img {
+      .coffee-item img {
         margin: 0 auto;
       }
     }
@@ -150,11 +143,11 @@
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="coffee.html">Coffee</a></li>
-      <li><a href="smoothies.html">Smoothies</a></li>
+      <li><a href="coffee.html">Hot Drinks</a></li>
+      <li><a href="smoothies.html">Iced Drinks</a></li>
       <li><a href="sweet treats.html">Sweet Treats</a></li>
       <li><a href="savoury treats.html">Savoury Treats</a></li>
-      <li><a href="salads.html">Salads</a></li>
+      <li><a href="salads.html">Breakfast & Brunch</a></li>
       <li><a href="about us.html">About Us</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -162,83 +155,77 @@
 </header>
 
 <main>
-
-  <section>
+  <section class="menu-items">
     <h1>Sweet Treats</h1>
 
-    <div class="treat-item">
-      <img src="apple pie.jpg" alt="Apple Pie">
+    <div class="coffee-item">
+      <img src="croissant.jpg" alt="croissant">
       <div>
-        <h2>Apple Pie</h2>
-        <p>This apple pie is a classic, from the scrumptious filling to the flaky pastry crust. Served with vanilla ice-cream.</p>
+        <h2>Crush on a Croissant</h2>
+        <p>An assorted selection of flaky, buttery croissants — classic butter, indulgent almond, and chocolate-filled.</p>
       </div>
     </div>
 
-    <div class="treat-item">
-      <img src="chocolate croissant.jpg" alt="Chocolate Croissant">
+    <div class="coffee-item">
+      <img src="cookies.jpg" alt="cookies">
       <div>
-        <h2>Chocolate Croissant</h2>
-        <p>A light flaky pastry filled with high-quality chocolate.</p>
+        <h2>Common Cookie</h2>
+        <p>A soft-baked cookie filled with generous chunks of chocolate.</p>
       </div>
     </div>
 
-    <div class="treat-item">
-      <img src="chocolate cupcake.jpg" alt="Chocolate Cupcake">
+    <div class="coffee-item">
+      <img src="brownies.jpg" alt="brownies">
       <div>
-        <h2>Chocolate Cupcake</h2>
-        <p>Moist and chocolatey flavoured cupcake topped with rich and creamy chocolate butter frosting.</p>
+        <h2>Fudge It</h2>
+        <p>A dense, fudgy brownie made with rich chocolate for a melt-in-the-mouth finish.</p>
       </div>
     </div>
 
-    <div class="treat-item">
-      <img src="red-velvet cupcake.jpg" alt="Red Velvet Cupcake">
+    <div class="coffee-item">
+      <img src="poppy-seed.jpg" alt="poppy seed">
       <div>
-        <h2>Red Velvet Cupcake</h2>
-        <p>Moist, with a hint of chocolate flavor and topped with amazing cream cheese frosting.</p>
+        <h2>Poppy Love</h2>
+        <p>A soft-baked roll with a rich, nutty poppy seed filling</p>
       </div>
     </div>
 
-    <div class="treat-item">
-      <img src="donuts.jpg" alt="Donuts">
+    <div class="coffee-item">
+      <img src="apple-pie.jpg" alt="apple pie">
       <div>
-        <h2>Donuts</h2>
-        <p>Choose from our assortment: Glazed, Chocolate, Cinnamon, Sugar, Nutty Delight, and Double Chocolate donuts.</p>
+        <h2>Pocketful of Apple</h2>
+        <p>A hand-filled mini apple pie with tender spiced apples and crisp pastry.</p>
       </div>
     </div>
 
-    <div class="treat-item">
-      <img src="cakes.jpg" alt="Cakes">
+    <div class="coffee-item">
+      <img src="tiramisu.jpg" alt="tiramisu">
       <div>
-        <h2>Cakes</h2>
-        <p>Delicious and moist cakes with lip-smacking frostings. Flavours include Chocolate, Vanilla, Red Velvet, Walnut, Black Forest, Lemon Cakes, and Blueberry Cheesecake.</p>
+        <h2>Tira-miss-u</h2>
+        <p>A hand-layered tiramisu served in a cup, combining coffee-soaked sponge, silky mascarpone, and cocoa dusting.</p>
       </div>
     </div>
 
-    <div class="treat-item">
-      <img src="macaroons.jpg" alt="Macarons">
+    <div class="coffee-item">
+      <img src="bebinca" alt="bebinca">
       <div>
-        <h2>Macaroons</h2>
-        <p>Light, crisp, and sweet meringue-based confections tinted and filled with buttercream. Flavours include Coconut, Rose, Pistachio, and Caramel.</p>
+        <h2>Benbinca Bite</h2>
+        <p>A delicate, hand-baked Goan dessert featuring thin, buttery layers of coconut, egg, and caramelized sugar.</p>
       </div>
     </div>
 
   </section>
 
-  <aside class="sidebar">
-    <h3>Best Seller</h3>
-    <img src="apple pie.jpg" alt="Apple pie">
-    <p>Apple pie with vanilla ice cream</p>
-
-    <h3>Chef’s Pick</h3>
-    <img src="avocado salad.jpg" alt="Avocado salad">
-    <p>Avocado salad</p>
-
-    <h3>Coffee of the Day</h3>
-    <img src="caffe latte.jpg" alt="Caffè latte">
-    <p>Caffè latte</p>
-  </aside>
-
+ <!-- Right-hand side image column -->
+<aside class="image-column">
+  <img src="ice.jpg" alt="Cafe Image 1">
+  <img src="lemons.jpg" alt="Cafe Image 2">
+  <img src="strawberries.jpg" alt="Cafe Image 3">
+  <img src="straws.avif" alt="Cafe Image 4">
+</aside>
+  
 </main>
+
 
 <footer>
   <p>Website designed by Greta Fernandes © 2026</p>
@@ -246,4 +233,10 @@
 
 </body>
 </html>
+
+
+
+
+
+
 
