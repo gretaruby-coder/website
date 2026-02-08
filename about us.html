@@ -34,9 +34,10 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1.8rem;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 0;
-      margin: 0;
       align-items: center;
     }
 
@@ -60,45 +61,49 @@
       gap: 2.5rem;
     }
 
-    h1, h3 {
+    h1, h2 {
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
+      margin-top: 0;
     }
 
     h1 {
       font-size: 2.4rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
-    .about img {
-      width: 100%;
-      border-radius: 14px;
-      margin: 2rem 0;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
-
-    .sidebar {
-      background-color: #ffffff;
-      padding: 1.8rem;
-      border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-    }
-
-    .sidebar h3 {
-      margin-top: 0;
-      margin-bottom: 0.8rem;
-    }
-
-    .sidebar img {
-      width: 100%;
-      border-radius: 12px;
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 2.5rem;
       margin-bottom: 0.6rem;
     }
 
-    .sidebar p {
-      margin-top: 0;
+    .about p {
+      margin-bottom: 1.2rem;
+    }
+
+    .about blockquote {
+      margin: 2.5rem 0;
+      padding-left: 1.2rem;
+      border-left: 3px solid var(--yellow-accent);
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-style: italic;
+    }
+
+    .image-column {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      align-self: start;
+    }
+
+    .image-column img {
+      width: 100%;
+      height: 425px;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      background-color: #eee;
     }
 
     footer {
@@ -124,11 +129,11 @@
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="coffee.html">Coffee</a></li>
-      <li><a href="smoothies.html">Smoothies</a></li>
+      <li><a href="coffee.html">Hot Drinks</a></li>
+      <li><a href="smoothies.html">Iced Drinks</a></li>
       <li><a href="sweet treats.html">Sweet Treats</a></li>
       <li><a href="savoury treats.html">Savoury Treats</a></li>
-      <li><a href="salads.html">Salads</a></li>
+      <li><a href="salads.html">Breakfast & Brunch</a></li>
       <li><a href="about us.html">About Us</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -141,37 +146,43 @@
     <h1>About Kitchen Door</h1>
 
     <p>
-      Kitchen Door is a quaint café tucked away in the heart of London. Founded in 2010 by
-      Greta Fernandes, the café was born from her lifelong passion for cooking and baking,
-      and her dream of creating a welcoming space where people could enjoy thoughtfully
-      prepared food.
+      Kitchen Door began with a simple idea: that the best food memories often happen just beyond the doorway.
+      A warm kitchen. A shared table. A sweet treat passed around without ceremony.
     </p>
-
-    <img src="ingds 2.jpg" alt="Fresh ingredients at Kitchen Door">
 
     <p>
-      At Kitchen Door, we believe that great flavour starts with great ingredients.
-      That’s why we use only the finest and freshest produce in everything we make.
-      The café is run by Greta herself, who works both front-of-house and behind the scenes
-      in the kitchen, lovingly preparing the food and drinks that our customers have come
-      to know and enjoy.
+      Our café brings together flavours from different cultures and serves them in a light-hearted, playful way.
+      Familiar comforts sit alongside small discoveries — simple bakes, classic sweets, and recipes shaped by many places.
     </p>
 
-    <p><strong>So come visit us and have a bite — for the love of food.</strong></p>
+    <blockquote>
+      Food doesn’t need explaining. It just needs to be shared.
+    </blockquote>
+
+    <h2>Inspired by London</h2>
+
+    <p>
+      London is a city of many kitchens. Living here means meeting people from everywhere — and often,
+      tasting their food before you know their stories.
+    </p>
+
+    <p>
+      Kitchen Door is shaped by that quiet exchange: recipes passed between cultures, flavours borrowed and re-imagined,
+      and the feeling that you don’t have to travel far to taste somewhere else.
+    </p>
+
+    <h2>Behind the Door</h2>
+
+    <p>
+      Kitchen Door is created by one pair of hands, guided by curiosity and a love for simple treats.
+      Some stories are written on menus. Others are left for you to discover.
+    </p>
+
   </section>
 
-  <aside class="sidebar">
-    <h3>Best Sellers</h3>
-    <img src="apple pie.jpg" alt="Apple pie">
-    <p>Apple pie with vanilla ice cream</p>
-
-    <h3>Chef’s Pick</h3>
-    <img src="avocado salad.jpg" alt="Avocado salad">
-    <p>Avocado salad</p>
-
-    <h3>Coffee of the Day</h3>
-    <img src="caffe latte.jpg" alt="Caffè latte">
-    <p>Caffè latte</p>
+  <aside class="image-column">
+    <img src="about1.jpg" alt="Image1">
+    <img src="about2.jpg" alt="Image2">
   </aside>
 
 </main>
@@ -182,6 +193,7 @@
 
 </body>
 </html>
+
 
 
 
