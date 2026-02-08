@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Salads | Kitchen Door</title>
+  <title>Breakfast & Brunch | Kitchen Door</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Google Fonts -->
@@ -34,9 +34,10 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1.8rem;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 0;
-      margin: 0;
       align-items: center;
     }
 
@@ -63,15 +64,14 @@
     h1, h2, h3 {
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
-      margin-top: 0;
     }
 
     h1 {
       font-size: 2.4rem;
-      margin-bottom: 1rem;
+      margin-top: 0;
     }
 
-    .salad-item {
+    .coffee-item {
       background: #fff;
       padding: 1.5rem;
       border-radius: 18px;
@@ -80,43 +80,18 @@
       gap: 1.5rem;
       margin-bottom: 2rem;
       box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-      align-items: center;
     }
 
-    .salad-item img {
+    .coffee-item img {
       width: 150px;
       height: 150px;
       object-fit: cover;
       border-radius: 12px;
     }
 
-    .salad-item p {
+    .coffee-item p {
       margin: 0.5rem 0 0;
       color: var(--text-muted);
-    }
-
-    .sidebar {
-      background: #fff;
-      padding: 1.8rem;
-      border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-    }
-
-    .sidebar img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 0.6rem;
-    }
-
-    .sidebar h3 {
-      margin-top: 0;
-      margin-bottom: 0.6rem;
-    }
-
-    .sidebar p {
-      margin-top: 0;
-      color: var(--text-muted);
-      font-size: 0.95rem;
     }
 
     footer {
@@ -128,17 +103,34 @@
       color: var(--text-muted);
     }
 
+    /* Right-hand side image column */
+.image-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.image-column img {
+  width: 100%;
+  height: 400px;  /* uniform height for all images */
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  align-self: start;
+}
+
+
     @media (max-width: 800px) {
       main {
         grid-template-columns: 1fr;
       }
 
-      .salad-item {
+      .coffee-item {
         grid-template-columns: 1fr;
         text-align: center;
       }
 
-      .salad-item img {
+      .coffee-item img {
         margin: 0 auto;
       }
     }
@@ -151,11 +143,11 @@
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="coffee.html">Coffee</a></li>
-      <li><a href="smoothies.html">Smoothies</a></li>
+      <li><a href="coffee.html">Hot Drinks</a></li>
+      <li><a href="smoothies.html">Iced Drinks</a></li>
       <li><a href="sweet treats.html">Sweet Treats</a></li>
       <li><a href="savoury treats.html">Savoury Treats</a></li>
-      <li><a href="salads.html">Salads</a></li>
+      <li><a href="salads.html">Breakfast & Brunch</a></li>
       <li><a href="about us.html">About Us</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -163,67 +155,77 @@
 </header>
 
 <main>
+  <section class="menu-items">
+    <h1>Breakfast & Brunch</h1>
 
-  <section>
-    <h1>Salads</h1>
-
-    <div class="salad-item">
-      <img src="nicoise salad.jpg" alt="Nicoise Salad">
+    <div class="coffee-item">
+      <img src="porridge.jpg" alt="porridge">
       <div>
-        <h2>Nicoise Salad</h2>
-        <p>A traditional French recipe with lettuce, tomatoes, green beans, tuna, anchovies, olives, and eggs.</p>
+        <h2>Berry Oat Bliss</h2>
+        <p>Porridge served warm with berries, cream, nuts, honey, and a touch of flowers.</p>
       </div>
     </div>
 
-    <div class="salad-item">
-      <img src="avocado salad.jpg" alt="Avocado Salad">
+    <div class="coffee-item">
+      <img src="fry-up.jpg" alt="fry up">
       <div>
-        <h2>Avocado Salad</h2>
-        <p>Fresh avocado tossed with tomatoes, feta, and olives. Simple yet sumptuous.</p>
+        <h2>Morning Glory</h2>
+        <p>A hearty mix of fried eggs, bacon, sausages, grilled tomatoes, mushrooms and baked beans served with toast</p>
       </div>
     </div>
 
-    <div class="salad-item">
-      <img src="coleslaw salad.jpg" alt="Coleslaw">
+    <div class="coffee-item">
+      <img src="cheese-omelette.jpg" alt="omelette">
       <div>
-        <h2>Coleslaw</h2>
-        <p>Shredded cabbage and carrots dressed with creamy mayonnaise.</p>
+        <h2>The Bear</h2>
+        <p>Boursin cheese folded into a soft omelette, topped with chives and potato crisps.</p>
       </div>
     </div>
 
-    <div class="salad-item">
-      <img src="russian salad.jpg" alt="Russian Salad">
+    <div class="coffee-item">
+      <img src="eggs-benny.jpg" alt="eggs benny">
       <div>
-        <h2>Russian Salad</h2>
-        <p>A traditional salad made with boiled potatoes, carrots, eggs, and mayonnaise.</p>
+        <h2>Golden Benny</h2>
+        <p>Toasted muffins topped with ham, poached eggs, and hollandaise sauce.</p>
       </div>
     </div>
 
-    <div class="salad-item">
-      <img src="fruit salad.jpg" alt="Fruit Salad">
+    <div class="coffee-item">
+      <img src="shakshouka.jpg" alt="shakshouka">
       <div>
-        <h2>Fruit Salad</h2>
-        <p>A refreshing mix of papaya, mango, strawberry, pineapple, kiwi, and other tropical fruits.</p>
+        <h2>Shak Attack</h2>
+        <p>Gently cooked egg in a rich tomato and pepper sauce with warming spices, topped with feta and fresh parsley, served straight from the pan.</p>
+      </div>
+    </div>
+
+    <div class="coffee-item">
+      <img src="avocado-salad.jpg" alt="salad">
+      <div>
+        <h2>Avo Chicka Wow Wow</h2>
+        <p>Tender chicken and creamy avocado meet crisp lettuce, sweetcorn, tomatoes, and onion, all tossed in a zesty mustard dressing.</p>
+      </div>
+    </div>
+
+    <div class="coffee-item">
+      <img src="fries.jpg" alt="fries">
+      <div>
+        <h2>Fried and loaded</h2>
+        <p>Fries piled high with cheese, bacon, and a fresh spring onion finish.</p>
       </div>
     </div>
 
   </section>
 
-  <aside class="sidebar">
-    <h3>Best Seller</h3>
-    <img src="apple pie.jpg" alt="Apple pie">
-    <p>Apple pie with vanilla ice cream</p>
-
-    <h3>Chef’s Pick</h3>
-    <img src="avocado salad.jpg" alt="Avocado salad">
-    <p>Avocado salad</p>
-
-    <h3>Coffee of the Day</h3>
-    <img src="caffe latte.jpg" alt="Caffè latte">
-    <p>Caffè latte</p>
-  </aside>
-
+ <!-- Right-hand side image column -->
+<aside class="image-column">
+  <img src="eggs.jpg" alt="Cafe Image 1">
+  <img src="oats.jpg" alt="Cafe Image 2">
+  <img src="veg.jpg" alt="Cafe Image 3">
+  <img src="toast.jpg" alt="Cafe Image 4">
+</aside>
+  
 </main>
+
 
 <footer>
   <p>Website designed by Greta Fernandes © 2026</p>
@@ -231,4 +233,16 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
 
