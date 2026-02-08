@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact Us | Kitchen Door</title>
+  <title>Contact | Kitchen Door</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Google Fonts -->
@@ -32,11 +32,12 @@
     }
 
     nav ul {
-    list-style: none;
+      list-style: none;
       display: flex;
-      gap: 1.8rem;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 0;
-      margin: 0;
       align-items: center;
     }
 
@@ -58,10 +59,9 @@
       display: grid;
       grid-template-columns: 2fr 1fr;
       gap: 2.5rem;
-      align-items: start;
     }
 
-    h1, h2, h3 {
+    h1, h2 {
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
       margin-top: 0;
@@ -69,68 +69,77 @@
 
     h1 {
       font-size: 2.4rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
     h2 {
-      font-size: 1.5rem;
-      margin-top: 1.5rem;
-      margin-bottom: 0.6rem;
-    }
-
-    p {
-      margin-bottom: 1em;
-    }
-
-    form input[type="text"],
-    form input[type="email"],
-    form textarea {
-      width: 100%;
-      padding: 0.6em;
-      margin-bottom: 1em;
-      border: 1px solid #e6b800;
-      border-radius: 6px;
-      font-size: 1rem;
-      box-sizing: border-box;
-    }
-
-    form input[type="submit"] {
-      background-color: var(--yellow-accent);
-      color: #fff;
-      padding: 0.8em 2em;
-      font-size: 1.1em;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    form input[type="submit"]:hover {
-      background-color: #d4a300;
-    }
-
-    .sidebar {
-      background-color: #ffffff;
-      padding: 1.8rem;
-      border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-    }
-
-    .sidebar h3 {
-      margin-top: 0;
+      font-size: 1.4rem;
+      margin-top: 2rem;
       margin-bottom: 0.8rem;
     }
 
-    .sidebar img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 0.6rem;
+    /* FORM STYLING */
+    form {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      margin-top: 2rem;
     }
 
-    .sidebar p {
-      margin-top: 0;
-      color: var(--text-muted);
+    label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.6rem 0.7rem;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-family: 'Inter', sans-serif;
       font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--yellow-accent);
+    }
+
+    input[type="submit"] {
+      background-color: var(--yellow-accent);
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 999px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #ffd45a;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    /* SIDE COLUMN */
+    .side-info {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      align-self: start;
+    }
+
+    .side-info p {
+      margin-bottom: 0.8rem;
     }
 
     footer {
@@ -146,24 +155,21 @@
       main {
         grid-template-columns: 1fr;
       }
-
-      nav ul {
-        justify-content: center;
-      }
     }
   </style>
 </head>
+
 <body>
 
 <header>
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="coffee.html">Coffee</a></li>
-      <li><a href="smoothies.html">Smoothies</a></li>
+      <li><a href="coffee.html">Hot Drinks</a></li>
+      <li><a href="smoothies.html">Iced Drinks</a></li>
       <li><a href="sweet treats.html">Sweet Treats</a></li>
       <li><a href="savoury treats.html">Savoury Treats</a></li>
-      <li><a href="salads.html">Salads</a></li>
+      <li><a href="salads.html">Breakfast & Brunch</a></li>
       <li><a href="about us.html">About Us</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -171,53 +177,55 @@
 </header>
 
 <main>
-  <!-- Main content -->
-  <div>
-    <h1>Book a Table at Kitchen Door</h1>
+
+  <section>
+    <h1>Book a Table</h1>
+
     <p>
-      Planning a visit to Kitchen Door? Whether it’s a relaxed coffee, a catch-up with friends,
-      or a special occasion, we’d love to welcome you. Fill in your details below and we’ll confirm your booking as soon as possible.
-      If you have any special requests or questions, feel free to include them in the message.
+      Planning a visit to Kitchen Door? Whether it’s a quiet coffee, a catch-up with friends,
+      or something worth celebrating, we’d love to welcome you.
     </p>
 
     <form id="booking-form" method="post" action="">
-      <h2>Personal Information</h2>
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name" />
+      <h2>Your Details</h2>
 
-      <label for="email">Email:</label>
-      <input type="email" name="email" id="email" />
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
 
-      <label for="phone">Phone:</label>
-      <input type="text" name="phone" id="phone" />
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
 
-      <h2>Booking Details</h2>
-      <label for="details">Date, Time & Special Requests:</label>
-      <textarea name="details" id="details" rows="5"></textarea>
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" name="phone">
 
-      <input type="submit" value="Submit Booking" />
+      <h2>Your Booking</h2>
+
+      <label for="details">Date, time & any special requests</label>
+      <textarea id="details" name="details" rows="5"></textarea>
+
+      <input type="submit" value="Send Booking Request">
+
+      <p class="note">
+        We’ll get back to you as soon as possible to confirm availability.
+      </p>
     </form>
+  </section>
 
-    <h2>Contact Details</h2>
-    <p>Phone: 0832-2271100</p>
-    <p>Mobile: +44 7982 300012</p>
+  <aside class="side-info">
+    <h2>Contact</h2>
+    <p>Phone: 020-888-477X</p>
+    <p>Mobile: +44 7982 30001X</p>
     <p>Email: <a href="mailto:info@kitchendoor.co.uk">info@kitchendoor.co.uk</a></p>
-  </div>
 
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <h3>BEST-SELLER</h3>
-    <img src="apple pie.jpg" alt="apple pie">
-    <p>Apple pie with vanilla ice-cream</p>
+    <h2>Opening Hours</h2>
+    <p>Mon – Fri: 8am – 4pm</p>
+    <p>Sat – Sun: 9am – 5pm</p>
 
-    <h3>CHEF’S PICK</h3>
-    <img src="avocado salad.jpg" alt="avocado salad">
-    <p>Avocado salad</p>
-
-    <h3>COFFEE OF THE DAY</h3>
-    <img src="caffe latte.jpg" alt="caffè latte">
-    <p>Caffè latte</p>
+    <p class="note">
+      Walk-ins are always welcome.
+    </p>
   </aside>
+
 </main>
 
 <footer>
@@ -226,6 +234,7 @@
 
 </body>
 </html>
+
 
 
 
