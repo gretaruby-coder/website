@@ -132,28 +132,24 @@
     /* SIDE COLUMN */
     
  .side-info {
-      background-color: #fff;
-      padding: 2rem;
-      border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-      align-self: start;
-    }
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  align-self: start;
+}
 
-    .side-info p {
-      margin-bottom: 0.8rem;
-      border-radius: 14px;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+.side-info img {
+  margin-top: 1.5rem; /* space above image */
+  border-radius: 14px;
+  width: 100%;
+  flex: 1 1 auto; /* fills remaining space */
+  object-fit: cover;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
 
-      
-.side-info {
-      background-color: #fff;
-      height: 300px;
-      padding: 2rem;
-      border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-      align-self: start;
-    }
     footer {
       background-color: var(--yellow-main);
       text-align: center;
@@ -228,7 +224,6 @@
   </section>
 
   <aside class="side-info">
-     <img src="contact1.jpg" alt="contact us">
     
     <h2>Contact</h2>
     <p>Phone: 020-888-477X</p>
@@ -243,6 +238,8 @@
     <p class="note">
       Walk-ins are always welcome.
     </p>
+    
+     <img src="contact1.jpg" alt="contact us">
   </aside>
 
 </main>
@@ -253,6 +250,7 @@
 
 </body>
 </html>
+
 
 
 
