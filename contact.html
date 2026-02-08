@@ -164,6 +164,32 @@
         grid-template-columns: 1fr;
       }
     }
+
+    .image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.image-grid img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  height: 220px; /* consistent height for alignment */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 800px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+  .image-grid img {
+    height: 250px;
+  }
+}
+
   </style>
 </head>
 
@@ -223,6 +249,13 @@
     </form>
   </section>
 
+  <section class="image-grid">
+  <img src="contact2.jpg" alt="image 1">
+  <img src="contact3.jpg" alt="image 2">
+  <img src="contact4.jpg" alt="image 3">
+</section>
+
+
   <aside class="side-info">
     
     <h2>Contact</h2>
@@ -250,6 +283,7 @@
 
 </body>
 </html>
+
 
 
 
