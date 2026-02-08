@@ -34,9 +34,10 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1.8rem;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 0;
-      margin: 0;
       align-items: center;
     }
 
@@ -63,15 +64,14 @@
     h1, h2, h3 {
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
-      margin-top: 0;
     }
 
     h1 {
       font-size: 2.4rem;
-      margin-bottom: 1rem;
+      margin-top: 0;
     }
 
-    .treat-item {
+    .coffee-item {
       background: #fff;
       padding: 1.5rem;
       border-radius: 18px;
@@ -80,43 +80,18 @@
       gap: 1.5rem;
       margin-bottom: 2rem;
       box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-      align-items: center;
     }
 
-    .treat-item img {
+    .coffee-item img {
       width: 150px;
       height: 150px;
       object-fit: cover;
       border-radius: 12px;
     }
 
-    .treat-item p {
+    .coffee-item p {
       margin: 0.5rem 0 0;
       color: var(--text-muted);
-    }
-
-    .sidebar {
-      background: #fff;
-      padding: 1.8rem;
-      border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-    }
-
-    .sidebar img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 0.6rem;
-    }
-
-    .sidebar h3 {
-      margin-top: 0;
-      margin-bottom: 0.6rem;
-    }
-
-    .sidebar p {
-      margin-top: 0;
-      color: var(--text-muted);
-      font-size: 0.95rem;
     }
 
     footer {
@@ -128,17 +103,34 @@
       color: var(--text-muted);
     }
 
+    /* Right-hand side image column */
+.image-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.image-column img {
+  width: 100%;
+  height: 400px;  /* uniform height for all images */
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  align-self: start;
+}
+
+
     @media (max-width: 800px) {
       main {
         grid-template-columns: 1fr;
       }
 
-      .treat-item {
+      .coffee-item {
         grid-template-columns: 1fr;
         text-align: center;
       }
 
-      .treat-item img {
+      .coffee-item img {
         margin: 0 auto;
       }
     }
@@ -151,11 +143,11 @@
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="coffee.html">Coffee</a></li>
-      <li><a href="smoothies.html">Smoothies</a></li>
+      <li><a href="coffee.html">Hot Drinks</a></li>
+      <li><a href="smoothies.html">Iced Drinks</a></li>
       <li><a href="sweet treats.html">Sweet Treats</a></li>
       <li><a href="savoury treats.html">Savoury Treats</a></li>
-      <li><a href="salads.html">Salads</a></li>
+      <li><a href="salads.html">Breakfast & Brunch</a></li>
       <li><a href="about us.html">About Us</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -163,67 +155,77 @@
 </header>
 
 <main>
-
-  <section>
+  <section class="menu-items">
     <h1>Savoury Treats</h1>
 
-    <div class="treat-item">
-      <img src="vegetarian sandwich.jpg" alt="Vegetarian Sandwich">
+    <div class="coffee-item">
+      <img src="sausage-rolls.jpg" alt="sausage roll">
       <div>
-        <h2>Vegetarian Sandwich</h2>
-        <p>Grilled sandwich with cheese and choice veggies: lettuce, tomatoes, onions, asparagus, and mushrooms.</p>
+        <h2>Garden Sausage Roll</h2>
+        <p>A mix of lentils, mushrooms, and carrots with herbs, all tucked inside light, flaky pastry., baked until golden and irresistible.</p>
       </div>
     </div>
 
-    <div class="treat-item">
-      <img src="chicken sandwich.jpg" alt="Chicken Sandwich">
+    <div class="coffee-item">
+      <img src="ham-cheese-croissant.jpeg" alt="ham cheese">
       <div>
-        <h2>Chicken Sandwich</h2>
-        <p>Grilled sandwich with juicy smoked chicken, cabbage, lettuce, olives, and mayonnaise.</p>
+        <h2>Cheesy Hammy</h2>
+        <p>Flaky, golden croissant filled with melted cheese and slices of tender ham.</p>
       </div>
     </div>
 
-    <div class="treat-item">
-      <img src="corn and cheese omelet.jpg" alt="Cheese Omelette">
+    <div class="coffee-item">
+      <img src="egg-sando.jpg" alt="egg sando">
       <div>
-        <h2>Cheese Omelette</h2>
-        <p>Omelette with cheddar, Parmesan, and goat cheese, plus corn and spinach.</p>
+        <h2>Sunny Slice Up</h2>
+        <p>Silky egg mayo with a hint of mustard and fresh herbs, served on soft, lightly buttered bread.</p>
       </div>
     </div>
 
-    <div class="treat-item">
-      <img src="spinach and mushroom quiche.jpg" alt="Mushroom Quiche">
+    <div class="coffee-item">
+      <img src="tuna-sando.webp" alt="tuna sando">
       <div>
-        <h2>Mushroom Quiche</h2>
-        <p>Mushrooms, spinach, feta, and Swiss cheeses fill this moist veggie quiche with flavor.</p>
+        <h2>Tuna It Up</h2>
+        <p>Creamy tuna salad with a hint of herbs, layered between fresh, soft bread.</p>
       </div>
     </div>
 
-    <div class="treat-item">
-      <img src="french fries.jpg" alt="French Fries">
+    <div class="coffee-item">
+      <img src="chicken-tikka.jpg" alt="chicken sando">
       <div>
-        <h2>French Fries</h2>
-        <p>Deep-fried, crispy potato chips tossed with salt and herbs, served with sweet onion mayo.</p>
+        <h2>Spice Slice</h2>
+        <p>Grilled chicken tikka infused with aromatic spices, paired with fresh salad on soft bread.</p>
+      </div>
+    </div>
+
+    <div class="coffee-item">
+      <img src="spinach-mushroom-quiche.jpg" alt="quiche">
+      <div>
+        <h2>Shrooms & Leaves</h2>
+        <p>Light, savory custard with spinach and mushrooms, baked in crisp pastry.</p>
+      </div>
+    </div>
+
+    <div class="coffee-item">
+      <img src="sev-puri.jpg" alt="sev puri">
+      <div>
+        <h2>Puri Party</h2>
+        <p>Golden puris topped with vibrant potatoes, onions, tomatoes, tamarind chutney, and a generous sprinkle of crunchy sev and pomegranate.</p>
       </div>
     </div>
 
   </section>
 
-  <aside class="sidebar">
-    <h3>Best Seller</h3>
-    <img src="apple pie.jpg" alt="Apple pie">
-    <p>Apple pie with vanilla ice cream</p>
-
-    <h3>Chef’s Pick</h3>
-    <img src="avocado salad.jpg" alt="Avocado salad">
-    <p>Avocado salad</p>
-
-    <h3>Coffee of the Day</h3>
-    <img src="caffe latte.jpg" alt="Caffè latte">
-    <p>Caffè latte</p>
-  </aside>
-
+ <!-- Right-hand side image column -->
+<aside class="image-column">
+  <img src="savoury1.jpg" alt="Cafe Image 1">
+  <img src="savoury2.jpg" alt="Cafe Image 2">
+  <img src="savoury3.jpg" alt="Cafe Image 3">
+  <img src="savoury4.jpg" alt="Cafe Image 4">
+</aside>
+  
 </main>
+
 
 <footer>
   <p>Website designed by Greta Fernandes © 2026</p>
@@ -231,3 +233,15 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
