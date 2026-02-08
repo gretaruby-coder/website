@@ -8,102 +8,93 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --yellow-main: #fff4cc;
-      --yellow-accent: #ffe08a;
-      --yellow-soft: #fff9e6;
-      --text-dark: #2f2f2f;
-      --text-muted: #6b6b6b;
-    }
+ <style>
+:root {
+  --yellow-main: #fff4cc;
+  --yellow-accent: #ffe08a;
+  --yellow-soft: #fff9e6;
+  --text-dark: #2f2f2f;
+  --text-muted: #6b6b6b;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: var(--yellow-soft);
-      color: var(--text-dark);
-      line-height: 1.7;
-    }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--yellow-soft);
+  color: var(--text-dark);
+  line-height: 1.7;
+}
 
-    header {
-      background-color: var(--yellow-main);
-      border-bottom: 1px solid #f0e2a4;
-      padding: 1.2rem 2rem;
-    }
+/* HEADER & NAV */
+header {
+  background-color: var(--yellow-main);
+  border-bottom: 1px solid #f0e2a4;
+  padding: 1.2rem 2rem;
+}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0;
-      align-items: center;
-    }
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap; /* allow wrapping on small screens */
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+  align-items: center;
+}
 
-    nav a {
-      text-decoration: none;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 500;
-      color: var(--text-dark);
-    }
+nav a {
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: var(--text-dark);
+}
 
-    nav a:hover {
-      color: #a67c00;
-    }
+nav a:hover {
+  color: #a67c00;
+}
 
-    main {
-      max-width: 1100px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 2.5rem;
-    }
+/* MAIN GRID */
+main {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+}
 
-    h1, h2, h3 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-    }
+/* HEADINGS */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
 
-    h1 {
-      font-size: 2.4rem;
-      margin-top: 0;
-    }
+/* COFFEE ITEMS */
+.coffee-item {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 18px;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
 
-    .coffee-item {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 18px;
-      display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-    }
+.coffee-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+}
 
-    .coffee-item img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 12px;
-    }
+.coffee-item p {
+  margin: 0.5rem 0 0;
+  color: var(--text-muted);
+}
 
-    .coffee-item p {
-      margin: 0.5rem 0 0;
-      color: var(--text-muted);
-    }
-
-    footer {
-      background-color: var(--yellow-main);
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 4rem;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    /* Right-hand side image column */
+/* RIGHT-HAND IMAGE COLUMN */
 .image-column {
   display: flex;
   flex-direction: column;
@@ -112,29 +103,61 @@
 
 .image-column img {
   width: 100%;
-  height: 400px;  /* uniform height for all images */
+  height: 400px;
   object-fit: cover;
   border-radius: 18px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.06);
   align-self: start;
 }
 
+/* FOOTER */
+footer {
+  background-color: var(--yellow-main);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
 
-    @media (max-width: 800px) {
-      main {
-        grid-template-columns: 1fr;
-      }
+/* MOBILE STYLING */
+@media (max-width: 800px) {
+  /* STACK MENU */
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  nav a {
+    padding: 0.5rem 0;
+  }
 
-      .coffee-item {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
+  /* STACK MAIN GRID */
+  main {
+    grid-template-columns: 1fr;
+  }
 
-      .coffee-item img {
-        margin: 0 auto;
-      }
-    }
-  </style>
+  /* COFFEE ITEMS STACKED */
+  .coffee-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .coffee-item img {
+    margin: 0 auto;
+  }
+
+  /* IMAGE COLUMN FULL WIDTH */
+  .image-column {
+    margin-top: 2rem;
+  }
+
+  .image-column img {
+    height: auto; /* scale naturally */
+  }
+}
+</style>
+
 </head>
 
 <body>
@@ -178,7 +201,7 @@
       <img src="brownies.jpg" alt="brownies">
       <div>
         <h2>Fudge It</h2>
-        <p>A dense, fudgy brownie made with rich chocolate for a melt-in-the-mouth finish.</p>
+        <p>A crinkly-top, fudgy brownie made with rich chocolate.</p>
       </div>
     </div>
 
@@ -186,7 +209,7 @@
       <img src="poppy-seed.jpg" alt="poppy seed">
       <div>
         <h2>Poppy Love</h2>
-        <p>A soft-baked roll with a rich, nutty poppy seed filling</p>
+        <p>A soft-baked roll with a rich, nutty poppy seed filling.</p>
       </div>
     </div>
 
@@ -233,6 +256,7 @@
 
 </body>
 </html>
+
 
 
 
